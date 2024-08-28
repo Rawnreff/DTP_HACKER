@@ -50,16 +50,15 @@
 
             if (result !== "Error") {
                 alert("Hasil: " + num1 + " " + operator + " " + num2 + " = " + result);
-                num1 = result;
-            } else {
-                // Jika operator tidak valid, tanyakan apakah ingin mengulang operasi
-                let restart = prompt("Operator tidak valid. Apakah Anda ingin mengulang operasi hitung? (y/t):").toLowerCase();
-                if (restart !== 'y') {
-                    continueOperation = false;
-                    alert("Operasi selesai.");
+                let choice = prompt("Apakah Anda ingin melanjutkan perhitungan dengan hasil perhitungan yang sebelumnya? (y/t):").toLowerCase();
+                if (choice === 'y') {
+                    num1 = result; // Melanjutkan dengan hasil sebelumnya
                 } else {
-                    num1 = undefined;
+                    num1 = undefined; // Mengulang dari awal
                 }
+            } else {
+                // Jika operator tidak valid, ulangi perhitungan dari awal
+                num1 = undefined;
             }
         }
     </script>
