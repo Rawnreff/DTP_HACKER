@@ -9,21 +9,20 @@
             let angka = prompt("Masukkan sebuah angka:");
 
             if (angka === null) {
-                // User menekan "Cancel", menghentikan fungsi
                 return;
             }
 
-            angka = parseInt(angka); // Mengonversi input ke angka
+            angka = parseInt(angka);
 
             if (isNaN(angka)) {
                 alert("Input bukan angka. Silakan masukkan angka yang valid.");
-                cekGanjilGenap(); // Mengulangi proses jika input tidak valid
+                cekGanjilGenap();
             } else {
                 let hasil = (angka % 2 === 0) ? "Genap" : "Ganjil";
                 alert(`Angka ${angka} adalah ${hasil}.`);
 
                 if (confirm("Apakah Anda ingin memasukkan angka lain?")) {
-                    cekGanjilGenap(); // Mengulangi proses jika user menekan "OK"
+                    cekGanjilGenap();
                 }
             }
         }

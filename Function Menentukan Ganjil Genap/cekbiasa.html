@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Ganjil Genap</title>
+</head>
+<body>
+    <h1>Cek Ganjil atau Genap</h1>
+    <script>
+        function cekGanjilGenap(bilangan) {
+            if (bilangan % 2 === 0) {
+                return "Genap";
+            } else {
+                return "Ganjil";
+            }
+        }
+
+        // Meminta input dari pengguna
+        let angka = prompt("Masukkan sebuah angka:");
+        angka = parseInt(angka); // Mengubah input dari string menjadi integer
+
+        if (!isNaN(angka)) { // Mengecek apakah input valid (bukan NaN)
+            alert("Angka " + angka + " adalah " + cekGanjilGenap(angka));
+        } else {
+            alert("Input tidak valid. Harap masukkan angka yang valid.");
+        }
+    </script>
+</body>
+</html>
