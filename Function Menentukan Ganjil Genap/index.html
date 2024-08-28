@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganjil atau Genap</title>
+    <script>
+        function cekGanjilGenap() {
+            let angka = prompt("Masukkan sebuah angka:");
+
+            if (angka === null) {
+                // User menekan "Cancel", menghentikan fungsi
+                return;
+            }
+
+            angka = parseInt(angka); // Mengonversi input ke angka
+
+            if (isNaN(angka)) {
+                alert("Input bukan angka. Silakan masukkan angka yang valid.");
+                cekGanjilGenap(); // Mengulangi proses jika input tidak valid
+            } else {
+                let hasil = (angka % 2 === 0) ? "Genap" : "Ganjil";
+                alert(`Angka ${angka} adalah ${hasil}.`);
+
+                if (confirm("Apakah Anda ingin memasukkan angka lain?")) {
+                    cekGanjilGenap(); // Mengulangi proses jika user menekan "OK"
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Ganjil Atau Genap (RIYAL or FAQE)</h1>
+    <p>Klik tombol dibawah untuk memulay :p</p>
+    <button onclick="cekGanjilGenap()">Cek Ganjil atau Genap</button>
+</body>
+</html>
