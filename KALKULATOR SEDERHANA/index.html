@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <!-- RAFEN SIDIQ ANGGARA -->
+    <!-- XI SIJA 1 -->
+    <!-- NO ABSEN: 24 -->
+</head>
+<body>
+    <script>
+        let continueOperation = true;
+        let num1;
+
+        while (continueOperation) {
+            // Jika tidak ada result sebelumnya atau pengguna memilih untuk memulai dari awal, minta input pertama
+            if (typeof num1 === 'undefined' || isNaN(num1)) {
+                num1 = parseFloat(prompt("Masukkan angka pertama:"));
+            }
+
+            // Meminta pengguna untuk memilih operator
+            let operator = prompt("Pilih operator ( +, -, *, /, % ):");
+
+            // Meminta input kedua dari pengguna
+            let num2 = parseFloat(prompt("Masukkan angka kedua:"));
+
+            let result;
+
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                case '%':
+                    result = num1 % num2;
+                    break;
+                default:
+                    alert("Operator tidak valid.");
+                    result = "Error";
+            }
+
+            if (result !== "Error") {
+                alert("Hasil: " + num1 + " " + operator + " " + num2 + " = " + result);
+            } else {
+                alert("Perhitungan gagal.");
+            }
+
+            let choice = prompt("Apakah Anda ingin melanjutkan operasi hitung dengan hasil sebelumnya (y/t):").toLowerCase();
+
+            if (choice === 'y') {
+                num1 = result;
+            } else {
+                num1 = undefined;
+                let restart = prompt("Apakah Anda ingin mengulang operasi hitung? (y/t):").toLowerCase();
+                if (restart !== 'y') {
+                    continueOperation = false;
+                    alert("Operasi selesai.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
